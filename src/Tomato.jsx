@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import tomato from './tomato.svg';
 
 class Tomato extends Component {
 	constructor(props) {
@@ -58,9 +59,12 @@ class Tomato extends Component {
 
 	render() {
 		return(
-			<div>
-				<p>{this.state.time}</p>
-				<p>{this.state.mode}</p>
+			<div className="row">
+				<div className="tomato">
+					<img src={tomato} />
+					<p>{this.state.time}</p>
+					<p>{this.state.mode}</p>
+				</div>
 			</div>
 		)
 	}

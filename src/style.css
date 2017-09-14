@@ -1,0 +1,84 @@
+body {
+  font-family: 'Handlee', cursive;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  background: #414b49;
+  color: white;
+  text-shadow: rgba(3, 3, 3, 0.07) 1px 1px 11px; }
+
+#root {
+  width: 75%;
+  margin: 3% 0;
+  max-width: 1000px; }
+
+button {
+  font-family: 'Handlee', cursive;
+  color: white;
+  font-weight: bold;
+  background: #d9534f;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  margin: 6px 6px;
+  -webkit-transition: 0.25s ease opacity;
+  -moz-transition: 0.25s ease opacity;
+  -ms-transition: 0.25s ease opacity;
+  transition: 0.25s ease opacity;
+  cursor: pointer; }
+
+button:hover {
+  opacity: 0.9; }
+
+button:focus {
+  outline: none; }
+
+.changeTime {
+  margin: 0 8px; }
+
+.title {
+  font-size: 5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between; }
+
+.row-center, .row-space-between, .row-space-around, .row-start, .row-end {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+.row-center {
+  justify-content: center; }
+
+.row-space-between {
+  justify-content: space-between; }
+
+.row-space-around {
+  justify-content: space-around; }
+
+.row-start {
+  justify-content: flex-start; }
+
+.row-end {
+  justify-content: flex-end; }
+
+.timer-controls {
+  width: 30%;
+  margin: 20px 0 0 0; }
+
+.tomato {
+  text-align: center;
+  margin: 40px 0 0 0; }
+
+.tomato img {
+  width: 50%; }

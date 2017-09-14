@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Controls from './Controls';
 import Tomato from './Tomato';
+import Title from './Title';
 import tick from './audio/tick.mp3'
 
 class Pomodoro extends Component {
@@ -33,7 +34,10 @@ class Pomodoro extends Component {
 	}
 
 	inheritWorkTime = (workTime) => {
-		this.setState({ workTime })
+		this.setState({ 
+			workTime,
+			seconds: this.minutesToSeconds(workTime)
+		})
 	}
 
 	switch() {
@@ -133,17 +137,20 @@ class Pomodoro extends Component {
 
 		return(
 			<div>
+				<Title text="Pomodoro  Clock" />
 				<div>
+					<Tomato seconds={this.state.seconds} mode={this.state.mode}/>
+				</div>
+				<div className="controls">
+					<div className="row-center">
 					<button className="switch" onClick={this.switch}>
 						{this.state.toggle ? "STOP" : "START"}
 					</button>
 					<button className="clear" onClick={this.clearButton}>
 						CLEAR
 					</button>
+					</div>
 					<Controls inheritWorkTime={this.inheritWorkTime} inheritBreakTime={this.inheritBreakTime} />
-				</div>
-				<div>
-					<Tomato seconds={this.state.seconds} mode={this.state.mode}/>
 				</div>
 			</div>
 		)

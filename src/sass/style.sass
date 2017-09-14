@@ -1,1 +1,72 @@
 @import mixins
+
+body
+	font-family: 'Handlee', cursive
+	+flexbox
+	justify-content: center
+	background: rgb(65, 75, 73)
+	color: white
+	text-shadow: rgba(3, 3, 3, 0.07) 1px 1px 11px
+
+#root
+	width: 75%
+	margin: 3% 0
+	max-width: 1000px
+	// background: red
+
+button
+	font-family: 'Handlee', cursive
+	color: white
+	font-weight: bold
+	background: rgb(217, 83, 79)
+	padding: 10px 12px
+	border: none
+	border-radius: 12px
+	margin: 6px 6px
+	+transition(.25s ease opacity)
+	cursor: pointer
+button:hover
+	opacity: 0.9
+button:focus
+	outline: none
+
+.changeTime
+	margin: 0 8px
+
+.title
+	font-size: 5em
+	font-weight: bold
+	text-transform: uppercase
+	+flexbox
+	justify-content: space-between
+
+%row
+	+flexbox
+
+.row
+	&-center
+		@extend %row
+		justify-content: center
+	&-space-between
+		@extend %row
+		justify-content: space-between
+	&-space-around
+		@extend %row
+		justify-content: space-around
+	&-start
+		@extend %row
+		justify-content: flex-start
+	&-end
+		@extend %row
+		justify-content: flex-end
+
+.timer-controls
+	width: 30%
+	margin: 20px 0 0 0
+
+.tomato
+	text-align: center
+	margin: 40px 0 0 0
+
+.tomato img
+	width: 50%

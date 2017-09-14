@@ -37,13 +37,19 @@ class Controls extends Component {
 
 	render() {
 		return (
-			<div>
-				<button className="changeTime" onClick={this.changeTime('workTime', 1)}>+</button>
-					{this.state.workTime}
-				<button className="changeTime" onClick={this.changeTime('workTime', -1)}>-</button>
-				<button className="changeTime" onClick={this.changeTime('breakTime', 1)}>+</button>
-					{this.state.breakTime}
-				<button className="changeTime" onClick={this.changeTime('breakTime', -1)}>-</button>
+			<div className="row-center">
+				<div className="row-space-between timer-controls">
+					<div>
+					<button className="changeTime" onClick={this.changeTime('workTime', -1)}>-</button>
+						{this.state.workTime}
+					<button className="changeTime" onClick={this.changeTime('workTime', 1)}>+</button>
+					</div>
+					<div>
+					<button className="changeTime" onClick={this.changeTime('breakTime', -1)}>-</button>
+						{this.state.breakTime}
+					<button className="changeTime" onClick={this.changeTime('breakTime', 1)}>+</button>
+					</div>
+				</div>
 			</div>
 		)
 	}
