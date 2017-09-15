@@ -30,7 +30,7 @@ class Pomodoro extends Component {
 	}
 
 	minutesToSeconds(minutes) {
-		return minutes// * 60
+		return minutes * 60
 	}
 	
 	inheritBreakTime = (breakTime) => {
