@@ -4,14 +4,15 @@ body
 	font-family: 'Handlee', cursive
 	+flexbox
 	justify-content: center
-	background: rgb(65, 75, 73)
+	// background: rgb(65, 75, 73)
+	background: hsla(135, 7%, 27%, 1)
 	color: white
 	text-shadow: rgba(3, 3, 3, 0.07) 1px 1px 11px
 
 #root
 	width: 75%
 	margin: 3% 0
-	max-width: 1000px
+	max-width: 900px
 	// background: red
 
 button
@@ -19,19 +20,18 @@ button
 	color: white
 	font-weight: bold
 	background: rgb(217, 83, 79)
-	padding: 10px 12px
+	padding: 6px 12px
 	border: none
 	border-radius: 12px
 	margin: 6px 6px
-	+transition(.25s ease opacity)
+	+transition(0.2s ease background)
 	cursor: pointer
+	box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2)
 button:hover
-	opacity: 0.9
+	// opacity: 0.9
+	background: rgb(191, 78, 75)
 button:focus
 	outline: none
-
-.changeTime
-	margin: 0 8px
 
 .title
 	font-size: 5em
@@ -39,6 +39,12 @@ button:focus
 	text-transform: uppercase
 	+flexbox
 	justify-content: space-between
+	@include tablet
+		font-size: 2.5em
+	@include all-phone
+		font-size: 2em
+	@include small-phone
+		font-size: 1.5em
 
 %row
 	+flexbox
@@ -60,13 +66,70 @@ button:focus
 		@extend %row
 		justify-content: flex-end
 
+.controls
+	.fa
+		text-shadow: rgba(3, 3, 3, 0.2) 1px 1px 6px
+
 .timer-controls
-	width: 30%
-	margin: 20px 0 0 0
+	// margin: 4px 0 0 0
+	font-weight: bold
+	flex-wrap: nowrap
+
+.timer-controls-each
+	+flexbox
+	justify-content: space-between
+	width: 16%
+	@include tablet
+		width: 20%	
+	@include large-phone
+		width: 27%	
+	@include phone
+		width: 34%
+	@include small-phone
+		width: 45%
+
+.timer-controls-button
+	// margin: -3px 8px
+	// padding: 5px 10px
+	border-radius: 12px	
+
+.timer-text
+	margin: 12px 0 0 0
 
 .tomato
 	text-align: center
-	margin: 40px 0 0 0
+	margin: 20px 0 20px 0
+	img
+		width: 60%
+		transform-origin: center 57%
+	.tomato-wrapper
+		position: relative
+.tomato-text
+	position: absolute
+	top: 50%
+	left: 50%
+	font-size: 3em
+	@include tablet
+		font-size: 2em
+	@include all-phone
+		font-size: 1em
+	// line-height: 15%
+	+transform(translate(-50%, -35%)) // appears centered in tomato
+	div
+		line-height: 15%
+	.fa
+		line-height: 15%
 
-.tomato img
-	width: 50%
+.footnote
+	text-align: center
+	font-size: 1.5em
+	@include all-mobile
+		font-size: 1em
+
+a
+	color: white
+	+transition(.25s ease opacity)
+
+a:hover
+	opacity: .8
+

@@ -17,6 +17,8 @@ class Controls extends Component {
 		return () => {
 			this.setState((prevState) => {
 				let total = prevState[clock] + amount
+				total < 1 ? total = 1 : undefined;
+				total > 45 ? total = 45 : undefined;
 				this.props[this.inheritFunctionNamer(clock)].call(this, total)
 				return {
 					[clock]: total
@@ -37,19 +39,25 @@ class Controls extends Component {
 
 	render() {
 		return (
-			<div className="row-center">
-				<div className="row-space-between timer-controls">
-					<div>
-					<button className="changeTime" onClick={this.changeTime('workTime', -1)}>-</button>
-						{this.state.workTime}
-					<button className="changeTime" onClick={this.changeTime('workTime', 1)}>+</button>
-					</div>
-					<div>
-					<button className="changeTime" onClick={this.changeTime('breakTime', -1)}>-</button>
-						{this.state.breakTime}
-					<button className="changeTime" onClick={this.changeTime('breakTime', 1)}>+</button>
-					</div>
-				</div>
+			<div className="row-center timer-controls">
+					<span className="timer-controls-each">
+						<button className="timer-controls-button" onClick={this.changeTime('workTime', -1)}>
+							<i className="fa fa-angle-down fa-lg"></i>
+						</button>
+							<span className="timer-text">{this.state.workTime}</span>
+						<button className="timer-controls-button" onClick={this.changeTime('workTime', 1)}>
+							<i className="fa fa-angle-up fa-lg"></i>
+						</button>
+					</span>
+					<span className="timer-controls-each">
+						<button className="timer-controls-button" onClick={this.changeTime('breakTime', -1)}>
+							<i className="fa fa-angle-down fa-lg"></i>
+							</button>
+							<span className="timer-text">{this.state.breakTime}</span>
+						<button className="timer-controls-button" onClick={this.changeTime('breakTime', 1)}>
+							<i className="fa fa-angle-up fa-lg"></i>
+						</button>
+					</span>
 			</div>
 		)
 	}

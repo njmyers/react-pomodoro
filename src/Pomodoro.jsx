@@ -3,15 +3,18 @@ import Controls from './Controls';
 import Tomato from './Tomato';
 import Title from './Title';
 import tick from './audio/tick.mp3'
+import ding from './audio/ding.mp3'
 
 class Pomodoro extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			toggle: false,
+			icon: this.createIconClass(false),
 			mode: 'workTime',
 			workTime: 25,
 			breakTime: 5,
+			longBreakTime: 15,
 			checkMark: 0,
 			counter: 0,
 			seconds: this.minutesToSeconds(25)
@@ -20,13 +23,14 @@ class Pomodoro extends Component {
 		this.frameRate = 4;
 		this.ms = 1000;
 		this.tickSound = new Audio(tick);
+		this.dingSound = new Audio(ding);
 
-		// this.clearButton = this.clearButton.bind(this);
+		this.clearButton = this.clearButton.bind(this);
 		this.switch = this.switch.bind(this);
 	}
 
 	minutesToSeconds(minutes) {
-		return minutes //* 60
+		return minutes// * 60
 	}
 	
 	inheritBreakTime = (breakTime) => {
@@ -45,9 +49,20 @@ class Pomodoro extends Component {
 		this.setState(function(prevState) {
 			prevState.toggle ? this.stop() : this.start()
 			return {
-				toggle: !prevState.toggle
+				toggle: !prevState.toggle,
+				icon: this.createIconClass(!prevState.toggle)
 			}
 		})
+	}
+
+
+	clearButton() {
+		this.clearState();
+	}
+
+	createIconClass(bool) {
+		if (!bool) return 'fa fa-play';
+		else return 'fa fa-ban';
 	}
 
 	start() {
@@ -68,46 +83,69 @@ class Pomodoro extends Component {
 		})
 	}
 
+	clearState() {
+		this.stop();
+		this.setState(function(prevState) {
+			return {
+				toggle: false,
+				icon: this.createIconClass(false),
+				mode: 'workTime',
+				checkMark: 0,
+				counter: 0,
+				seconds: this.minutesToSeconds(prevState.workTime)
+			}	
+		});
+	}
+
 	frame() {
 		this.setState(function(prevState) {
-			let counter, date, seconds, checkMark, mode
+			let { counter, seconds, checkMark, mode } = prevState;
+			let date;
 
-			if (Math.abs(prevState.counter - this.ms) < 6 || prevState.counter >= this.ms) {
+			// if frame equals one second
+			if (Math.abs(counter - this.ms) < 6 || counter >= this.ms) {
+
+				// if clock is finished
 				if (prevState.seconds === 1) {
+					
+					this.ding();
 					date = new Date();
-					switch(prevState.mode) {
+
+					switch(mode) {
 						case 'workTime':
-							seconds = this.minutesToSeconds(prevState.breakTime)
-							mode = 'breakTime';
+							checkMark < 3 ? mode = 'breakTime' : mode = 'longBreakTime';
+							checkMark >= 3 ? checkMark = 0 : undefined;
 							break;
 						case 'breakTime':
-							seconds = this.minutesToSeconds(prevState.workTime)
+							mode = 'workTime';
+							checkMark += 1;	
+							console.log(`checkMark: ${checkMark}`);
+							break;
+						case 'longBreakTime':
 							mode = 'workTime';
 							break;
-						case 'longBreak':
-							// seconds = this.minutesToSeconds
-							break;
 					}
+
+					// evaluate mode and seconds to add to clock
+					seconds = this.minutesToSeconds(prevState[mode]) 
 					counter = 0;
-					checkMark = prevState.checkMark + 1;	
-				}
-				else {
+				} else {
+
+					// normal tick at one second
 					this.tick();
 					date = new Date();
-					seconds = prevState.seconds - 1;
+					seconds -= 1;
 					counter = 0;
-					checkMark = prevState.checkMark
-					mode = prevState.mode
 				}
-			} else {
+			} else { 
+
+				// normal frame between second intervals
 				date = new Date();
-				seconds = prevState.seconds;
 				let difference = (date - prevState.date);
-				counter = prevState.counter + difference;
-				checkMark = prevState.checkMark
-				mode = prevState.mode
+				counter += difference;
 			}
 
+			// setting states
 			return {
 				date,
 				seconds,
@@ -127,11 +165,14 @@ class Pomodoro extends Component {
 		this.tickSound.play();
 	}
 
-	// Move to Controls Class
+	ding() {
+		console.log('ding');
 
-	// clearButton() {
-	// 	// Set Initial State
-	// }
+		// ensures sounds don't run into each other
+		this.dingSound.pause();
+		this.dingSound.currentTime = 0;
+		this.dingSound.play();
+	}
 
 	render() {
 
@@ -139,19 +180,25 @@ class Pomodoro extends Component {
 			<div>
 				<Title text="Pomodoro  Clock" />
 				<div>
-					<Tomato seconds={this.state.seconds} mode={this.state.mode}/>
+					<Tomato seconds={this.state.seconds} mode={this.state.mode} 
+						workTime={this.minutesToSeconds(this.state.workTime)}
+						breakTime={this.minutesToSeconds(this.state.breakTime)} 
+						longBreakTime={this.minutesToSeconds(this.state.longBreakTime)} />
 				</div>
 				<div className="controls">
 					<div className="row-center">
-					<button className="switch" onClick={this.switch}>
-						{this.state.toggle ? "STOP" : "START"}
-					</button>
-					<button className="clear" onClick={this.clearButton}>
-						CLEAR
-					</button>
+						<button className="switch" onClick={this.switch}>
+							<i className={this.state.icon}></i>
+						</button>
+						<button className="clear" onClick={this.clearButton}>
+							<i className="fa fa-undo"></i>
+						</button>
 					</div>
-					<Controls inheritWorkTime={this.inheritWorkTime} inheritBreakTime={this.inheritBreakTime} />
+					<Controls 
+						inheritWorkTime={this.inheritWorkTime}
+						inheritBreakTime={this.inheritBreakTime} />
 				</div>
+				<p className="footnote">read about pomodoro technique on <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank" rel="noopener noreferrer">wikipedia</a></p>
 			</div>
 		)
 	}

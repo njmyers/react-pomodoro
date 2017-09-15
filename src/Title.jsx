@@ -15,7 +15,7 @@ class Title extends Component {
 				<span key={i}>{letter}</span>
 			)
 		});
-		console.log(spanner);
+		// console.log(spanner);
 		return spanner;
 	}
 

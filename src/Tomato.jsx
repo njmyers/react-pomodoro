@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 import tomato from './tomato.svg';
 
+// All times in seconds here
+
 class Tomato extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			time: this.formatTime(this.props.seconds),
 			mode: this.formatMode(this.props.mode),
+			icon: this.createIconClass(this.formatMode(this.props.mode)), // must call twice on init
 			style: {
 				transform: 'rotate(0deg)'
 			}
 		}
 	}
 
-	rotation() {
-
+	calcRotation(secondsElapsed, totalSeconds) {
+		// console.log(secondsElapsed, totalSeconds)
+	    let deg = secondsElapsed / totalSeconds * 360;
+	    deg = 360 - deg;
+	    return deg;
 	}
 
 	// shouldComponentUpdate(nextProps, nextState) {
@@ -28,21 +34,35 @@ class Tomato extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (this.props.seconds !== nextProps.seconds) {
+
+			let deg = this.calcRotation(nextProps.seconds, nextProps[nextProps.mode])
+
 			this.setState({
-				time: this.formatTime(nextProps.seconds)
+				time: this.formatTime(nextProps.seconds),
+				style: {
+					transform: `rotate(${deg}deg)`
+				}
 			})
 		}
 
 		if (this.props.mode !== nextProps.mode) {
+			let mode = this.formatMode(nextProps.mode);
+			let icon = this.createIconClass(mode);
 			this.setState({
-				mode: this.formatMode(nextProps.mode)
+				mode,
+				icon
 			})
 		}
 	}
 
+	createIconClass(mode) {
+		if (mode === 'work') return 'fa fa-laptop';
+		if (mode === 'break') return 'fa fa-coffee';
+	}
+
 	formatMode(mode) {
 		let regex = /[A-Z]/g;
-		return mode.replace(regex, (match) => ` ${match.toLowerCase()}`)
+		return mode.slice(0, mode.search(regex));
 	}
 
 	formatTime(propSeconds) {
@@ -59,11 +79,15 @@ class Tomato extends Component {
 
 	render() {
 		return(
-			<div className="row">
-				<div className="tomato">
-					<img src={tomato} />
-					<p>{this.state.time}</p>
-					<p>{this.state.mode}</p>
+			<div className="tomato row-center">
+				<div className="tomato-wrapper">
+					<img src={tomato} alt="tomato" style={this.state.style} />
+					<div className="tomato-text">
+						<div>
+							<p>{this.state.time}</p>
+							<p>{this.state.mode} <i className={this.state.icon}></i></p>
+						</div>
+					</div>
 				</div>
 			</div>
 		)

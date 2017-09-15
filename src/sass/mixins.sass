@@ -4,14 +4,20 @@ $desktop-width: 1024px
 $tablet-width: 768px
 $phone-width: 440px
 $small-phone-width: 200px
+$large-phone-width: 600px
 
 //Browser Prefixes
 
-=transition($trans)
-	-webkit-transition: $trans
-	-moz-transition:  $trans
-	-ms-transition:   $trans
-	transition:     $trans
+=transition($transition)
+	-webkit-transition: $transition
+	-moz-transition:  $transition
+	-ms-transition:   $transition
+	transition:     $transition
+
+=transform($transform)
+  -webkit-transform: $transform
+  -ms-transform: $transform
+  transform: $transform
 
 =flexbox()
 	display: -webkit-box
@@ -33,26 +39,32 @@ $small-phone-width: 200px
 		font-style: $style
 		font-weight: $weight
 
+
+@mixin desktop
+	@media (min-width: $desktop-width)
+		@content
+
 @mixin all-mobile
 	@media (min-width: $small-phone-width) and (max-width: $desktop-width)
-		@content
-
-@mixin small-phone
-	@media (min-width: $small-phone-width) and (max-width: $phone-width - 1)
-		@content
-
-@mixin all-phone
-	@media (min-width: $small-phone-width) and (max-width: $tablet-width - 1)
-		@content
-
-@mixin phone
-	@media (min-width: $phone-width) and (max-width: $tablet-width - 1)
 		@content
 
 @mixin tablet
 	@media (min-width: $tablet-width) and (max-width: $desktop-width - 1)
 		@content
 
-@mixin desktop
-	@media (min-width: $desktop-width)
+@mixin all-phone
+	@media (min-width: $small-phone-width) and (max-width: $tablet-width - 1)
 		@content
+
+@mixin large-phone
+	@media (min-width: $large-phone-width) and (max-width: $tablet-width - 1)
+		@content
+
+@mixin phone
+	@media (min-width: $phone-width) and (max-width: $large-phone-width - 1)
+		@content
+
+@mixin small-phone
+	@media (min-width: $small-phone-width) and (max-width: $phone-width - 1)
+		@content
+
