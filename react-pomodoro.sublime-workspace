@@ -4,6 +4,94 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-size"
+			],
+			[
+				"medium",
+				"medium-phone-width"
+			],
+			[
+				"ic",
+				"icon"
+			],
+			[
+				"c",
+				"createIconClass"
+			],
+			[
+				"for",
+				"formatMode"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"long",
+				"longBreakTime"
+			],
+			[
+				"tran",
+				"transform-origin"
+			],
+			[
+				"se",
+				"secondsElapsed"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"trans",
+				"transform"
+			],
+			[
+				"transition",
+				"transition"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"mr",
+				"margin"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"fomr",
+				"formatTime"
+			],
+			[
+				"nex",
+				"nextProps"
+			],
+			[
+				"break",
+				"breakTime"
+			],
+			[
+				"bre",
+				"breakTime"
+			],
+			[
+				"min",
+				"minutesToSeconds"
+			],
+			[
+				"mi",
+				"minutesToMS"
+			],
+			[
 				"setIn",
 				"setInitialState"
 			],
@@ -16,20 +104,12 @@
 				"clearButton"
 			],
 			[
-				"cla",
-				"className\t{} "
-			],
-			[
 				"rot",
 				"rotateTomato"
 			],
 			[
 				"start",
 				"startTimer"
-			],
-			[
-				"long",
-				"longBreak"
 			],
 			[
 				"lon",
@@ -46,10 +126,6 @@
 			[
 				"st",
 				"stateSwitcher"
-			],
-			[
-				"bre",
-				"breakTimeInit"
 			],
 			[
 				"count",
@@ -164,10 +240,6 @@
 				"colors"
 			],
 			[
-				"tran",
-				"transition"
-			],
-			[
 				"gen",
 				"generateColor"
 			],
@@ -178,10 +250,6 @@
 			[
 				"re",
 				"remove"
-			],
-			[
-				"fon",
-				"font-family"
 			],
 			[
 				"cli",
@@ -234,10 +302,6 @@
 			[
 				"var",
 				"variable"
-			],
-			[
-				"for",
-				"for\tfor (…) {…} (Improved Native For-Loop)"
 			],
 			[
 				"get",
@@ -450,70 +514,6 @@
 			[
 				"game",
 				"gamePlay"
-			],
-			[
-				"d",
-				"displayMove"
-			],
-			[
-				"reg",
-				"regDraw"
-			],
-			[
-				"let",
-				"let"
-			],
-			[
-				"ga",
-				"gamePlay"
-			],
-			[
-				"ru",
-				"runO"
-			],
-			[
-				"ar",
-				"arrGame"
-			],
-			[
-				"te",
-				"tempArr"
-			],
-			[
-				"tex",
-				"text-left"
-			],
-			[
-				"text",
-				"text-center"
-			],
-			[
-				"por",
-				"prototype"
-			],
-			[
-				"css",
-				"cssClass"
-			],
-			[
-				"cs",
-				"cssClass"
-			],
-			[
-				"tra",
-				"translate"
-			],
-			[
-				"de",
-				"degreeCalc"
-			],
-			[
-				"mySt",
-				"myStateTime"
-			],
-			[
-				"col",
-				"col-xs-2"
 			]
 		]
 	},
@@ -523,7 +523,16 @@
 			"file": "src/Pomodoro.jsx",
 			"settings":
 			{
-				"buffer_size": 1790,
+				"buffer_size": 4473,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Tomato.jsx",
+			"settings":
+			{
+				"buffer_size": 2238,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -532,33 +541,61 @@
 			"file": "src/Controls.jsx",
 			"settings":
 			{
-				"buffer_size": 1206,
+				"buffer_size": 1787,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "react-pomodoro.sublime-project",
+			"file": "public/index.html",
 			"settings":
 			{
-				"buffer_size": 45,
+				"buffer_size": 1430,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/audio/tock.aac",
+			"file": "src/tomato.svg",
 			"settings":
 			{
-				"buffer_size": 3280,
-				"encoding": "Hexadecimal",
+				"buffer_size": 4771,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/index.js",
+			"file": "src/Title.jsx",
 			"settings":
 			{
-				"buffer_size": 269,
+				"buffer_size": 504,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/sass/style.sass",
+			"settings":
+			{
+				"buffer_size": 2354,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/manifest.json",
+			"settings":
+			{
+				"buffer_size": 400,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/sass/mixins.sass",
+			"settings":
+			{
+				"buffer_size": 1688,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -621,16 +658,30 @@
 	"expanded_folders":
 	[
 		"/home/developer/Dropbox/www/sites/react-pomodoro",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/public",
 		"/home/developer/Dropbox/www/sites/react-pomodoro/src"
 	],
 	"file_history":
 	[
+		"/home/developer/Downloads/favicons/browserconfig.xml",
+		"/home/developer/Downloads/favicons/manifest.json",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/package.json",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/src/sass/style.sass",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/lib/array-set.js",
+		"/home/developer/Dropbox/www/installscripts/fedora-installation-scripts.sh",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/src/tomato.svg",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/src/sass/mixins.sass",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/.gitignore",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/src/style.css",
+		"/home/developer/Dropbox/www/sites/boilerplate-ui/src/sass/grid.sass",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/src/index.js",
+		"/home/developer/Downloads/tomato_line_art_55330/Tomato_Line_Art.svg",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/public/index.html",
+		"/home/developer/Dropbox/www/sites/react-pomodoro/react-pomodoro.sublime-project",
 		"/home/developer/Dropbox/www/sites/react-pomodoro/src/test.js",
 		"/home/developer/Dropbox/www/sites/react-pomodoro/src/Pomodoro/mixins.sass",
 		"/home/developer/Dropbox/www/sites/react-pomodoro/src/Pomodoro/style.sass",
-		"/home/developer/Dropbox/www/sites/react-pomodoro/package.json",
 		"/home/developer/Dropbox/www/sites/react-pomodoro/src/registerServiceWorker.js",
-		"/home/developer/Dropbox/www/sites/react-pomodoro/src/index.js",
 		"/Volumes/Sonny/www/sites/pomodoro/wwwroot/index.html",
 		"/Volumes/Sonny/Users/nicholasmyers/Desktop/cracklePop.js",
 		"/Volumes/Sonny/www/sites/pomodoro/wwwroot/scriptvanilla.js",
@@ -739,24 +790,11 @@
 		"/Volumes/Sonny/Users/nicholasmyers/Projects/js-minicamp-homework-1/package.json",
 		"/Volumes/Sonny/www/sites/client3/wwwroot/style.css",
 		"/Volumes/Sonny/www/sites/client7/wwwroot/reverse.js",
-		"/Volumes/Sonny/Users/nicholasmyers/Projects/freecodecamp/gulpfile.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/basicHourlyFunction.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/upperCase.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/ratecalculator.php",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/switch.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/vowelCount.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/perfectNumber.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/test.php",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/letterCount.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/repeatChar.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/bubbleSort.js",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/primeCheck.js",
-		"/Volumes/Sonny/Users/nicholasmyers/Library/Application Support/Sublime Text 3/Packages/User/JavaScript.sublime-build",
-		"/Volumes/Sonny/www/sites/client7/wwwroot/toCoins.js"
+		"/Volumes/Sonny/Users/nicholasmyers/Projects/freecodecamp/gulpfile.js"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -770,6 +808,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"clearButton",
+			"span",
+			"timer-controls",
+			"change-time",
+			"changeTime",
+			"div",
+			"lg",
+			"arrow",
+			"caret",
+			"chevron",
+			"px",
+			"longBreak",
+			"title",
+			"formatSeconds",
+			"minutestoMS",
 			"addTime",
 			"codepen",
 			"countdown",
@@ -867,6 +920,19 @@
 		"regex": false,
 		"replace_history":
 		[
+			"div",
+			"timer-controls-each",
+			"timer-controls-button",
+			"change-time",
+			"span",
+			"2x",
+			"angle",
+			"arrow",
+			"caret",
+			"longBreakTime",
+			"text",
+			"formatTime",
+			"minutesToSeconds",
 			"changeTime",
 			"my.countDown",
 			"workInit",
@@ -923,15 +989,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1790,
+						"buffer_size": 4473,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1108,
-								1108
+								1195,
+								1195
 							]
 						],
 						"settings":
@@ -941,36 +1007,37 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 648.0,
+						"translation.y": 1512.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/Controls.jsx",
+					"file": "src/Tomato.jsx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1206,
+						"buffer_size": 2238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								550,
-								550
+								1848,
+								1736
 							]
 						],
 						"settings":
 						{
 							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -978,11 +1045,11 @@
 				},
 				{
 					"buffer": 2,
-					"file": "react-pomodoro.sublime-project",
+					"file": "src/Controls.jsx",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 45,
+						"buffer_size": 1787,
 						"regions":
 						{
 						},
@@ -995,35 +1062,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/audio/tock.aac",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3280,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1033,25 +1074,158 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/index.js",
+					"buffer": 3,
+					"file": "public/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 269,
+						"buffer_size": 1430,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								205,
-								205
+								606,
+								606
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"file": "public/favicon.ico",
+					"semi_transient": true,
+					"stack_index": 7,
+					"type": "image"
+				},
+				{
+					"buffer": 4,
+					"file": "src/tomato.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4771,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2903,
+								2903
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1080.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Title.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								348,
+								348
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "src/sass/style.sass",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1206,
+								1206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 756.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/manifest.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								178,
+								178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1059,13 +1233,42 @@
 					},
 					"stack_index": 4,
 					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/sass/mixins.sass",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1460,
+								1460
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1080,11 +1283,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.630560369728,
 			1.0
 		],
 		"rows":
@@ -1106,7 +1316,7 @@
 	"project": "react-pomodoro.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
